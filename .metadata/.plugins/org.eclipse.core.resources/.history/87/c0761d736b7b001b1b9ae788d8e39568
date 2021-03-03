@@ -1,0 +1,25 @@
+package demos;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import static io.restassured.RestAssured.*;
+import io.restassured.response.Response;
+
+public class TestEx1 {
+
+	@Test
+	public void GetEx() {
+		Response res = get("https://reqres.in/api/users?page=2");
+		System.out.println(res.getStatusCode());
+		System.out.println(res.getTime());	
+		System.out.println(res.getBody().asString());
+		System.out.println(res.asString());
+		System.out.println(res.getStatusLine());
+		System.out.println(res.getHeader("Content-type"));
+		int stcode = res.getStatusCode();
+		System.out.println(stcode);
+		Assert.assertEquals(stcode, 200);
+		System.out.println("TestEx1 is validated");
+	}
+}

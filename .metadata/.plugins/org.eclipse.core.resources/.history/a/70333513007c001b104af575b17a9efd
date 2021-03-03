@@ -1,0 +1,29 @@
+package LocalTest;
+
+import static io.restassured.RestAssured.baseURI;
+import static io.restassured.RestAssured.given;
+
+import org.json.simple.JSONObject;
+import org.testng.annotations.Test;
+
+import io.restassured.http.ContentType;
+
+public class LocalTestPost {
+
+	@Test
+	public void post() {
+		JSONObject req = new JSONObject();
+		req.put("firstName", "anu");
+		req.put("lName", "A");
+		req.put("subject", "3");
+		req.put("id", "3");
+		baseURI = "http://localhost:3000";
+		given().
+			header("Content-Type", "application/json").contentType(ContentType.JSON).
+			accept(ContentType.JSON).
+			body(req.toJSONString()).
+		when().
+			post("/users").
+//		then().statusCode(201).log().all();
+	}
+}

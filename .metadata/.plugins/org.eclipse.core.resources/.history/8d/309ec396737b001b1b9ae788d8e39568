@@ -1,0 +1,21 @@
+package demos;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.json.simple.JSONObject;
+import org.testng.annotations.Test;
+
+public class TestEx4 {
+
+	@Test
+	public void postEx() {
+//		Map<String, Object> map = new HashMap<String, Object>();
+//		map.put("name", "Renu");
+//		map.put("job", "Engineer");
+//		System.out.println(map);
+		JSONObject request = new JSONObject(map);
+		System.out.println(request);
+		System.out.println(request.toString());
+	}
+}

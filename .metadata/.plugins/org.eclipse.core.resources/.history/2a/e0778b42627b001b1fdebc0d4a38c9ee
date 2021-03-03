@@ -1,0 +1,16 @@
+package demos;
+
+import org.testng.annotations.Test;
+
+import io.restassured.RestAssured.*;
+import io.restassured.response.Response;
+
+public class TestEx1 {
+
+	@Test
+	public void GetEx() {
+		Response res = get("https://reqres.in/api/users?page=2");
+		System.out.println(res.getStatusCode());
+		System.out.println(res.getTime());	
+	}
+}

@@ -1,0 +1,16 @@
+package LocalTest;
+
+import org.testng.annotations.Test;
+import static io.restassured.RestAssured.baseURI;
+import static io.restassured.RestAssured.given;
+public class LocalTestGet {
+
+	@Test
+	public void get() {
+		baseURI ="";
+		given().
+		get("").
+		then().
+		statusCode().log().all();
+	}
+}

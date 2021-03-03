@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="5914" started-at="2021-03-03T15:43:56 IST" finished-at="2021-03-03T15:44:02 IST">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="5914" started-at="2021-03-03T15:43:56 IST" finished-at="2021-03-03T15:44:02 IST">
+      <class name="demos.TestEx2">
+        <test-method status="PASS" signature="getEx2()[pri:0, instance:demos.TestEx2@d44fc21]" name="getEx2" duration-ms="5866" started-at="2021-03-03T15:43:56 IST" finished-at="2021-03-03T15:44:02 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getEx2 -->
+      </class> <!-- demos.TestEx2 -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

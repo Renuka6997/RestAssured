@@ -1,0 +1,15 @@
+package demos;
+
+import static io.restassured.RestAssured.baseURI;
+import static io.restassured.RestAssured.given;
+
+public class TestEx2 {
+
+	public void GetEx2() {
+		baseURI = "https://reqres.in/api";
+		given().
+		get("/users?page=2");
+		then().
+		StatusCode(200).
+	}
+}

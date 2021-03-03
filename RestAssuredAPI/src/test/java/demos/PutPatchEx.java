@@ -1,0 +1,31 @@
+package demos;
+
+import org.json.simple.JSONObject;
+import org.testng.annotations.Test;
+import static io.restassured.RestAssured.baseURI;
+import static io.restassured.RestAssured.given;
+import io.restassured.http.ContentType;
+
+public class PutPatchEx {
+
+	@Test
+	public void testPutPatch() {
+		JSONObject req = new JSONObject();
+		req.put("job", "Doctor");
+		req.put("Id", "89");
+		System.out.println(req.toJSONString());
+//		baseURI = "https://reqres.in/api"; //for PUT
+		baseURI = "https://reqres.in";
+		given().
+			header("Content-Type","applicationTest/json").
+			contentType(ContentType.JSON).
+			accept(ContentType.JSON).
+			body(req.toJSONString()).
+		when().
+//			put("/users/2").//for PUT
+		    patch("/api/users/2"). //for PATCH
+		then().
+			statusCode(200).log().all();
+		System.out.println("put and patch is validated");
+	}
+}
